@@ -1,13 +1,13 @@
 package Task;
 
 import java.lang.reflect.Type;
-import java.util.Locale;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Task {
     private String description;
     private int idGenerator;
-    private String dateTime;
+    private LocalDateTime dateTime;
     private Type type;
     private  String title;
     private static int counter = 0;
@@ -16,7 +16,7 @@ public class Task {
     public Task(String description, int idGenerator, String dateTime, Type type, String title, int id) {
         this.description = description;
         this.idGenerator = idGenerator;
-        this.dateTime = dateTime;
+        this.dateTime = LocalDateTime.now();
         this.type = type;
         this.title = title;
         this.id = id;
@@ -30,7 +30,7 @@ public class Task {
         return idGenerator;
     }
 
-    public String getDateTime() {
+    public LocalDateTime getDateTime() {
         return dateTime;
     }
 
@@ -69,5 +69,17 @@ public class Task {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "description='" + description + '\'' +
+                ", idGenerator=" + idGenerator +
+                ", dateTime='" + dateTime + '\'' +
+                ", type=" + type +
+                ", title='" + title + '\'' +
+                ", id=" + id +
+                '}';
     }
 }
