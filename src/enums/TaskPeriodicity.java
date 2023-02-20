@@ -26,7 +26,7 @@ public enum TaskPeriodicity {
             return new WeeklyTask();
         }
     },
-    MONTHLY {
+    MONTHLY  {
         @Override
         public Task createTask() {
             return new MounthlyTask();

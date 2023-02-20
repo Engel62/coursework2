@@ -1,8 +1,8 @@
 package enums;
 
 public enum Type {
-    WORK ("Рабочая"),
-    PERSONAL("Личная");
+    WORK("WORK"),
+    PERSONAL("PERSONAL");
 
     private final String type;
 

@@ -62,25 +62,25 @@ public int hashCode() {
 
 @Override
 public String toString() {
-        return String.format("id: %d, type: %s, title: %s, description: %s, date and time: %s", id, type, title,
+        return String.format("id: %d, тип: %s, название: %s, описание: %s, дата и время: %s", id, type, title,
         description, InputUtils.dateTimeToString(dateTime));
         }
 
 public void askData() throws IncorrectArgumentException {
-        System.out.println("Please select task type:");
+        System.out.println("Выберите тип задачи:");
         for (Type taskType : Type.values()) {
         System.out.println(taskType);
         }
-        type = Type.valueOf(InputUtils.askString("Your selection").toUpperCase());
-        title = InputUtils.askString("Title");
+        type = Type.valueOf(InputUtils.askString("Ваш выбор").toUpperCase());
+        title = InputUtils.askString("Название");
         if (title == null || title.isBlank() || title.isEmpty()) {
-        throw new IncorrectArgumentException("Enter the correct title");
+        throw new IncorrectArgumentException("Введите корректное название");
         }
-        description = InputUtils.askString("Enter a description");
+        description = InputUtils.askString("Введите описание");
         if (description == null || description.isBlank() || description.isEmpty()) {
-        throw new IncorrectArgumentException("Enter the correct description");
+        throw new IncorrectArgumentException("Введите корректное описание");
         }
-        dateTime = InputUtils.askDateTime("Enter the date and time");
+        dateTime = InputUtils.askDateTime("Введите дату и время");
         }
 
 public abstract boolean appearsIn(LocalDate localDate);
